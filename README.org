@@ -5,4 +5,22 @@
 #+STARTUP: nohideblocks
 #+STARTUP: Indent
 
+* Background
+
+This tutorial will show you how to integrate =docker= into your data science workflow. =docker= is an open source tool that makes it easy to build, deploy and run applications using a container framework. If you do any of the following, you can use =docker= to make your life easier:
+
+- share and reproduce your analysis
+- run large scale data cleaning tasks
+- build dashboards and publish models 
+
+* Getting Started
+
+Clone the repo to your machine
+
+#+BEGIN_EXAMPLE
+ git clone https://github.com/harnav/pydata-docker-tutorial.git
+#+END_EXAMPLE
+
+
+ 
 
