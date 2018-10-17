@@ -1,0 +1,8 @@
+#+TITLE: Docker for Data Science 
+#+AUTHOR: Hareem Naveed
+#+EMAIL: hnaveed@munichre.ca
+#+STARTUP: showeverything
+#+STARTUP: nohideblocks
+#+STARTUP: Indent
+
+
