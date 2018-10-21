@@ -13,4 +13,5 @@
 A Dockerfile has INSTRUCTIONS and arguments. It is not neccessary that they be capitalized, but it is the convention.
 
 ***FROM
+
 THE *FROM* statement specifies the base image. 
