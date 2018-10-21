@@ -1,16 +1,27 @@
 * Setting up a Dev Environment
 
-When working on a python project, a common way that people will manage their dependencies is running =pip freeze > requirements.txt=. Often, when reproducing somebody else's analysis, it is not enough to run =pip install -r requirements.txt= in the repository.  
+When working on a python project, a common way that people will manage their dependencies is running =pip freeze > requirements.txt= and coupling that with =virtualenv= to manage project level dependencies.
+
+Often, when reproducing somebody else's analysis, it is not enough to run =pip install -r requirements.txt= in the repository.  
 
 However, sometimes there are configurations that are specific system level dependencies that are not captured. As I go along with developing my code, I will install system-level dependencies as required by the package.  
 
-To be able to replicate all the system level dependencies, you can see how Docker could easily be used! Now we move to the next stage, which is figuring out how to layer instructions, and put together a Dockerfile to set up a docker container with your exact specifications to replicate your results. 
-We often have this use case: somebody builds a tool in a different flavour of python or has updated packages or older versions of packages than ones you may have on your machine. Or having pandas 0.20 on one machine and pandas 0.21 on another can change how the metrics are calculated slightly. How many times have you struggled with setting up virtualenvs per project and struggling to manage each virtualenv? With Docker, you can update and run containers as the requirements of your project change. Also, with the concept of =push= and =pull= for Docker containers, you can also version control your project environment.
+To be able to replicate all the system level dependencies, you can see how Docker could easily be used! 
 
-Let's set up a Dockerfile for a simple tool that will allow us to run our data cleaning script and reproduce our outputs. 
+Now we move to the next stage, which is figuring out how to layer instructions, and put together a Dockerfile to set up a docker container with your exact specifications to replicate your results. 
 
-** Deploying a model
+In the past few weeks, we have observed the following issues: 
+* Somebody builds a tool in a different flavour of python with several package changes 
+* Having pandas 0.20 on one machine and pandas 0.21 on another can change how the metrics are calculated slightly
+* Struggling to manage =virtualenvs= for different packages, broken =virtualenvs=
 
-Now that we have worked through a Dockerfile in our last exercise. Let us start to work on a more complicated use case. What if I have a python model and I would like to deploy it as an API. 
+Let's set up a Dockerfile that will allow us to run our data cleaning script and reproduce outputs. 
+
+In the terminal run:
+#+BEGIN_EXAMPLE
+docker build -t devenv .
+#+END_EXAMPLE
+
+
 
 
