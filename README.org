@@ -31,9 +31,9 @@ In this tutorial, we will go over three points
 
 For more detailed instructions, check out: 
 
-- https://towardsdatascience.com/how-docker-can-help-you-become-a-more-effective-data-scientist-7fc048ef91d5
-- https://www.analyticsvidhya.com/blog/2017/11/reproducible-data-science-docker-for-data-science/
-- https://github.com/docker/labs
+- [[How Docker Can Help you Become a More Effective Data Scientist][https://towardsdatascience.com/how-docker-can-help-you-become-a-more-effective-data-scientist-7fc048ef91d5]]
+- [[https://www.analyticsvidhya.com/blog/2017/11/reproducible-data-science-docker-for-data-science/][Reproducible Data Science: Docker for Data Science]]
+- [[https://github.com/docker/labs][Docker Labs]]
 
 
 
