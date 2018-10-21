@@ -1,1 +1,4 @@
 
+* Getting Familiar with a Dockerfile
+
+** In this section we 
