@@ -1,4 +1,10 @@
 
 * Getting Familiar with a Dockerfile
 
-** In this section we 
+** Terminology
+- Image: Blueprint for the container you want to build. Often based on other images.
+- Layer: Modification to a base image. Layers are supplied in sequence to create a final image.
+- Container: Built from an image. Can have many copies of the same image running as containers.
+- Dockerfile: Instructions for how to build an image. Has a special syntax that contains all the commands that are routed to the command line to build an image. 
+- Commit: One of the benefits of Docker is that it offers version control of a computing environment. This is handled similar to git.
+- DockerHub/Container Registry: A repository for Docker containers. Can have public and private. Dockerhub (public) vs Azure/AWS offerings of container registries (private).
