@@ -14,7 +14,7 @@ A Dockerfile has INSTRUCTIONS and arguments. It is not neccessary that they be c
 
 *** FROM
 
-The *FROM* statement specifies the base image. In our example, we are taking the =postgres= base image from [Dockerhub[https://hub.docker.com/_/postgres/]]. 
+The *FROM* statement specifies the base image. In our example, we are taking the =postgres= base image from [[https://hub.docker.com/_/postgres/][Dockerhub]]. 
 
 *** LABEL
 
