@@ -24,7 +24,11 @@ docker build -t devenv .
 
 This should set up a jupyter notebook that you will be able to access with all the tools in the =requirements.txt= file installed. 
 
+#+BEGIN_EXAMPLE
+docker run -p 8888:8888 devenv
+#+END_EXAMPLE
 
+Now access it from your machine, try =localhost:8888=. It will ask you to copy and paste the token you were given.
 
 
 
