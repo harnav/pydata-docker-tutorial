@@ -14,12 +14,11 @@ A Dockerfile has INSTRUCTIONS and arguments. It is not neccessary that they be c
 
 *** FROM
 
-The *FROM* statement specifies the base image. In our example, we are taking the =postgres= base image from Dockerhub[https://hub.docker.com/_/postgres/]. 
+The *FROM* statement specifies the base image. In our example, we are taking the =postgres= base image from [Dockerhub[https://hub.docker.com/_/postgres/]]. 
 
 *** LABEL
 
 The *LABEL* statement adds metadata to the image. It is optional, but is helpful if you are pushing your containers to a shared registry so people know who to contact in case of an issue.
-
 
 *** RUN
 
@@ -35,6 +34,10 @@ The *ADD* statement lets you copy files from the host machine to the docker cont
 
 *** CMD
 
-The *CMD* statement is 
+The *CMD* statement is used to provide defaults when executing a container. Only one *CMD* statement is valid per container, and if you provide several, only the last one will be used by the container. 
+
+More information on Docker commands can be found here: https://docs.docker.com/engine/reference/builder/
+
+
 
 
