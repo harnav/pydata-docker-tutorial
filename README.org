@@ -27,6 +27,15 @@ This tutorial consists of three sections
 2. Reproducible environments
 3. Deploying models
 
+*** References
+
+- https://github.com/Soluto/python-flask-sklearn-docker-template
+- https://towardsdatascience.com/how-docker-can-help-you-become-a-more-effective-data-scientist-7fc048ef91d5
+- https://www.analyticsvidhya.com/blog/2017/11/reproducible-data-science-docker-for-data-science/
+- https://github.com/docker/labs
+
+
+
 
 
 
