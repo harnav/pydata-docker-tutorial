@@ -21,6 +21,99 @@ Clone the repo to your machine
  git clone https://github.com/harnav/pydata-docker-tutorial.git
 #+END_EXAMPLE
 
+This tutorial consists of three sections
+
+1. Running a container
+2. Reproducible environments
+3. Deploying models
+
+** Running a container
+
+To check that everything is set-up, run the following
+
+#+BEGIN_EXAMPLE
+ docker run hello-world
+#+END_EXAMPLE
+
+** Pulling an Image
+
+Now that everything is set up, let's walk through how to run your first container. We will run a =python= container, and get familiar with some of the =docker= commands.
+
+In your terminal, run the following:
+
+#+BEGIN_EXAMPLE
+ docker pull python
+#+END_EXAMPLE
+
+If you get a permission denied error, it may require you to run =sudo docker pull=. To avoid this in the future, try:
+
+#+BEGIN_EXAMPLE
+ sudo supermod -a docker $USER
+#+END_EXAMPLE
+
+Then exit and restart your terminal. It should work after you restart your terminal. 
+
+The pull command fetches the latest =python= image from *Dockerhub*, a public container registry. To see which images are downloaded to your machine, run the following:
+
+#+BEGIN_EXAMPLE
+ docker images
+#+END_EXAMPLE
+
+Now that we have pulled our first image, it is time to run the container. 
+
+** Running a Container
+In your terminal, run the following:
+
+#+BEGIN_EXAMPLE
+ docker run python echo "hello!" 
+#+END_EXAMPLE
+
+What happens now? When you call =run=, the Docker client calls the Docker daemon, which checks locally to see if the image is available, if it is not, it downloads it from Dockerhub. Since we already pulled the image, this step is not necessary. Instead, the daemon creates the container and runs the command you specified in the containter. The output of the command is then streamed to the client. 
+
+In our above example, the Docker client ran the command in the container and then exited out...in a matter of seconds! The speed with which containers can be created, and commands run makes them very useful in a multitude of use cases. Imagine, using Azure or AWS to boot up a virtual machine, running a command and then exiting. 
+
+Note that the container exits after the command you pass to it is run. For it to not exit, you will need to run:
+
+#+BEGIN_EXAMPLE
+ docker run -it python python
+#+END_EXAMPLE
+ 
+This drops you in to the container, and into a python shell. Try out a few commands. You can exit the container by typing =exit=. 
+
+If you want to see what containers you have running, type:
+#+BEGIN_EXAMPLE
+ docker ps 
+#+END_EXAMPLE
+
+Since you have exited out of all the containers, you will see nothing here. You see the containers that you _have_ run, try:
+#+BEGIN_EXAMPLE
+ docker ps -a
+#+END_EXAMPLE
+ 
+This shows you a list of all the containers, you have run and also their STATUS. If at any time, you want to clean up images and containers, you have to use:
+#+BEGIN_EXAMPLE
+ docker rm $(docker ps -a -q)
+#+END_EXAMPLE
+
+This clears all the containers on your machine. Similarly, to remove all images, use =docker rmi $(docker images -a -q) 
+
+** Setting up a dev environment
+
+When working on a python project, a common way that people will manage their dependencies is running =pip freeze > requirements.txt=. Often, when reproducing somebody else's analysis, it is not enough to run =pip install -r requirements.txt= in the repository.  
+
+However, sometimes there are configurations that are specific system level dependencies that are not captured. As I go along with developing my code, I will install system-level dependencies as required by the package.  
+
+To be able to replicate all the system level dependencies, you can see how Docker could easily be used! Now we move to the next stage, which is figuring out how to layer instructions, and put together a Dockerfile to set up a docker container with your exact specifications to replicate your results. 
+We often have this use case: somebody builds a tool in a different flavour of python or has updated packages or older versions of packages than ones you may have on your machine. Or having pandas 0.20 on one machine and pandas 0.21 on another can change how the metrics are calculated slightly. How many times have you struggled with setting up virtualenvs per project and struggling to manage each virtualenv? With Docker, you can update and run containers as the requirements of your project change. Also, with the concept of =push= and =pull= for Docker containers, you can also version control your project environment.
+
+Let's set up a Dockerfile for a simple tool that will allow us to run our data cleaning script and reproduce our outputs. 
+
+** Deploying a model
+
+Now that we have worked through a Dockerfile in our last exercise. Let us start to work on a more complicated use case. What if I have a python model and I would like to deploy it as an API. 
+
+
+
 
  
 
