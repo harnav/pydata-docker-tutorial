@@ -6,7 +6,8 @@ To check that everything is set-up, run the following:
  docker run hello-world
 #+END_EXAMPLE
 
-```console
+```sh
+
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
 d1725b59e92d: Pull complete
