@@ -11,9 +11,9 @@ To be able to replicate all the system level dependencies, you can see how Docke
 Now we move to the next stage, which is figuring out how to layer instructions, and put together a Dockerfile to set up a docker container with your exact specifications to replicate your results. 
 
 In the past few weeks, we have observed the following issues: 
-* Somebody builds a tool in a different flavour of python with several package changes 
-* Having pandas 0.20 on one machine and pandas 0.21 on another can change how the metrics are calculated slightly
-* Struggling to manage =virtualenvs= for different packages, broken =virtualenvs=
+1. Somebody builds a tool in a different flavour of python with several package changes 
+2. Having pandas 0.20 on one machine and pandas 0.21 on another can change how the metrics are calculated slightly
+3. Struggling to manage =virtualenvs= for different packages, broken =virtualenvs=
 
 Let's set up a Dockerfile that will allow us to run our data cleaning script and reproduce outputs. 
 
