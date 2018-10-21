@@ -15,12 +15,15 @@ In the past few weeks, we have observed the following issues:
 2. Having pandas 0.20 on one machine and pandas 0.21 on another can change how the metrics are calculated slightly
 3. Struggling to manage =virtualenvs= for different packages, broken =virtualenvs=
 
-Let's set up a Dockerfile that will allow us to run our data cleaning script and reproduce outputs. 
+The use case we will explore here, is setting up a python machine with all the tools required for a project, and then setting up a jupyter notebook server within to access all those resources: 
 
 In the terminal run:
 #+BEGIN_EXAMPLE
 docker build -t devenv .
 #+END_EXAMPLE
+
+This should set up a jupyter notebook that you will be able to access with all the tools in the =requirements.txt= file installed. 
+
 
 
 
