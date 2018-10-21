@@ -6,7 +6,7 @@ To check that everything is set-up, run the following:
  docker run hello-world
 #+END_EXAMPLE
 
-```sh
+#+BEGIN_SRC sh
 
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
@@ -34,7 +34,8 @@ Share images, automate workflows, and more with a free Docker ID:
 
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
-```
+ 
+#+END_SRC
 
 
 ** Pulling an Image
