@@ -21,7 +21,7 @@ Clone the repo to your machine
  git clone https://github.com/harnav/pydata-docker-tutorial.git
 #+END_EXAMPLE
 
-This tutorial consists of three sections
+In this tutorial, we will go over three points
 
 1. Running a container
 2. Reproducible environments
