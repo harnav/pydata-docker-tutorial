@@ -83,4 +83,17 @@ If at any time, you want to clean up images and containers, you can use:
  docker rm $(docker ps -a -q)
 #+END_EXAMPLE
 
-This clears all the containers on your machine. Similarly, to remove all images, use =docker rmi $(docker images -a -q)=.
+This clears all the containers on your machine. Similarly, to remove all images, use =docker rmi $(docker images -a -q)=. If you want to clean up images, try:
+
+#+BEGIN_EXAMPLE
+docker image prune -a
+#+END_EXAMPLE
+
+This will clean up all images without an associated container from your machine. And for the big finish, we you can also use:
+
+#+BEGIN_EXAMPLE
+docker container prune
+#+END_EXAMPLE
+
+Be careful, as this will remove all stopped containers, and may take some time. 
+
