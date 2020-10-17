@@ -26,7 +26,7 @@ The *RUN* statement is the workhorse of the Dockerfile. In our case, we are usin
 
 *** WORKDIR
 
-The *WORKDIR* statement is often sued to specify a working directory. Any subsequent commands will assume that is the working directory.
+The *WORKDIR* statement is often used to specify a working directory. Any subsequent commands will assume that is the working directory.
 
 *** ADD
 
